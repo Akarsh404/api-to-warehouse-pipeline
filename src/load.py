@@ -1,8 +1,9 @@
 from dataclasses import dataclass
+from datetime import datetime
 import hashlib
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 import duckdb
 
 from src.config import settings
@@ -299,5 +300,151 @@ def transform_and_load_curated(
         f"{result.orders_loaded} orders loaded ({result.order_duplicates_removed} dupes removed, {result.orphan_orders_rejected} orphans quarantined)"
     )
     return result
+
+
+def get_watermark(conn: duckdb.DuckDBPyConnection, endpoint: str) -> Optional[str]:
+    row = conn.execute(
+        "SELECT last_updated_at FROM watermarks WHERE endpoint = ?",
+        [endpoint],
+    ).fetchone()
+    return row[0] if row else None
+
+
+def update_watermark(
+    conn: duckdb.DuckDBPyConnection,
+    endpoint: str,
+    last_updated_at: str,
+) -> None:
+    conn.execute(
+        """
+        INSERT INTO watermarks (endpoint, last_updated_at)
+        VALUES (?, ?)
+        ON CONFLICT (endpoint) DO UPDATE SET
+            last_updated_at = EXCLUDED.last_updated_at
+        WHERE EXCLUDED.last_updated_at > watermarks.last_updated_at;
+        """,
+        [endpoint, last_updated_at],
+    )
+
+
+def compute_high_watermark(records: List[Dict[str, Any]]) -> Optional[str]:
+    parsed: List[Tuple[datetime, str]] = []
+    for r in records:
+        ts_str = r.get("updated_at")
+        if isinstance(ts_str, str):
+            try:
+                dt = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                parsed.append((dt, ts_str))
+            except ValueError:
+                pass
+    if not parsed:
+        return None
+    parsed.sort(key=lambda x: x[0])
+    return parsed[-1][1]
+
+
+def get_all_watermarks(conn: duckdb.DuckDBPyConnection) -> Dict[str, str]:
+    rows = conn.execute("SELECT endpoint, last_updated_at FROM watermarks").fetchall()
+    return {endpoint: watermark for endpoint, watermark in rows}
+
+
+def start_pipeline_run(
+    conn: duckdb.DuckDBPyConnection,
+    run_id: str,
+    started_at: Optional[str] = None,
+) -> None:
+    start_time = started_at or datetime.now().astimezone().isoformat()
+    conn.execute(
+        """
+        INSERT INTO pipeline_runs (run_id, started_at, status)
+        VALUES (?, ?, 'RUNNING')
+        """,
+        [run_id, start_time],
+    )
+
+
+def complete_pipeline_run(
+    conn: duckdb.DuckDBPyConnection,
+    run_id: str,
+    status: str,
+    ended_at: Optional[str] = None,
+    rows_fetched: int = 0,
+    rows_loaded: int = 0,
+    rows_rejected: int = 0,
+    duplicates_removed: int = 0,
+    retries: int = 0,
+) -> None:
+    end_time = ended_at or datetime.now().astimezone().isoformat()
+    conn.execute(
+        """
+        UPDATE pipeline_runs
+        SET ended_at = ?,
+            status = ?,
+            rows_fetched = ?,
+            rows_loaded = ?,
+            rows_rejected = ?,
+            duplicates_removed = ?,
+            retries = ?
+        WHERE run_id = ?
+        """,
+        [
+            end_time,
+            status,
+            rows_fetched,
+            rows_loaded,
+            rows_rejected,
+            duplicates_removed,
+            retries,
+            run_id,
+        ],
+    )
+
+
+def get_pipeline_run(conn: duckdb.DuckDBPyConnection, run_id: str) -> Optional[Dict[str, Any]]:
+    row = conn.execute(
+        """
+        SELECT run_id, started_at, ended_at, status, rows_fetched, rows_loaded,
+               rows_rejected, duplicates_removed, retries
+        FROM pipeline_runs
+        WHERE run_id = ?
+        """,
+        [run_id],
+    ).fetchone()
+
+    if not row:
+        return None
+
+    return {
+        "run_id": row[0],
+        "started_at": row[1],
+        "ended_at": row[2],
+        "status": row[3],
+        "rows_fetched": row[4],
+        "rows_loaded": row[5],
+        "rows_rejected": row[6],
+        "duplicates_removed": row[7],
+        "retries": row[8],
+    }
+
+
+def get_top_rejection_reasons(
+    conn: duckdb.DuckDBPyConnection,
+    run_id: str,
+    limit: int = 3,
+) -> List[Dict[str, Any]]:
+    rows = conn.execute(
+        """
+        SELECT reason, COUNT(*) as count
+        FROM rejected_records
+        WHERE run_id = ?
+        GROUP BY reason
+        ORDER BY count DESC
+        LIMIT ?
+        """,
+        [run_id, limit],
+    ).fetchall()
+    return [{"reason": r[0], "count": r[1]} for r in rows]
+
+
 
 
