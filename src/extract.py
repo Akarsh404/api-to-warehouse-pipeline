@@ -63,6 +63,7 @@ class Extractor:
         self.session = session or requests.Session()
         self.sleep_fn = sleep_fn
         self.logger = get_logger("extractor", run_id=run_id)
+        self.total_retries = 0
 
     def _calculate_backoff(self, attempt: int, response: Optional[requests.Response]) -> float:
         if response is not None and response.status_code == 429:
@@ -156,6 +157,7 @@ class Extractor:
                 raise RetryExhaustedError(err_msg)
 
             sleep_duration = self._calculate_backoff(attempt, response)
+            self.total_retries += 1
             self.logger.info(f"Sleeping {sleep_duration:.2f}s before retry attempt {attempt + 1}")
             self.sleep_fn(sleep_duration)
             attempt += 1
@@ -171,11 +173,11 @@ class Extractor:
     ) -> ExtractionResult:
         result = ExtractionResult()
         current_page = 1
+        initial_retries = self.total_retries
 
         self.logger.info(f"Starting extraction for endpoint={endpoint}")
 
         while True:
-            # We track attempt count to compute total retries made
             page_data = self.fetch_page(
                 endpoint=endpoint,
                 page=current_page,
@@ -194,8 +196,9 @@ class Extractor:
                 break
             current_page += 1
 
+        result.retries_count = self.total_retries - initial_retries
         self.logger.info(
             f"Completed extraction for endpoint={endpoint}: total_pages={len(result.pages)} "
-            f"total_records={result.total_records}"
+            f"total_records={result.total_records} retries={result.retries_count}"
         )
         return result
