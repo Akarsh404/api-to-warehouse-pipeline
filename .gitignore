@@ -1,0 +1,27 @@
+# Environment variables
+.env
+
+# DuckDB database and WAL files
+*.duckdb
+*.duckdb.wal
+
+# Python caches and bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+
+# Pytest cache
+.pytest_cache/
+
+# Operating system files
+.DS_Store
+
+# IDE and editor settings
+.idea/
+.vscode/
+
+# Local agent instructions
+AGENTS.md
+
