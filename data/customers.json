@@ -1,0 +1,394 @@
+[
+  {
+    "customer_id": "CUST-0001",
+    "name": "Noah Devi",
+    "email": "noah.devi1@example.com",
+    "country": "US",
+    "updated_at": "2026-10-01T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0002",
+    "name": "Olivia Kim",
+    "email": "olivia.kim2@example.com",
+    "country": "DE",
+    "updated_at": "2026-10-01T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0003",
+    "name": "Amara Garcia",
+    "email": "amara.garcia3@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-01T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0004",
+    "name": "Noah Wang",
+    "email": "noah.wang4@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-02T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0005",
+    "name": "Aditi Smith",
+    "email": "aditi.smith5@example.com",
+    "country": "JP",
+    "updated_at": "2026-10-02T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0006",
+    "name": "Aarav Chen",
+    "email": "aarav.chen6@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-02T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0007",
+    "name": "Amara Ivanov",
+    "email": "amara.ivanov7@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-02T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0008",
+    "name": "Maya Chen",
+    "email": "maya.chen8@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-02T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0009",
+    "name": "Amara Wang",
+    "email": "amara.wang9@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-02T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0010",
+    "name": "Fatima Ivanov",
+    "email": "fatima.ivanov10@example.com",
+    "country": "AU",
+    "updated_at": "2026-10-03T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0011",
+    "name": "Maya Kim",
+    "email": "maya.kim11@example.com",
+    "country": "US",
+    "updated_at": "2026-10-03T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0012",
+    "name": "Priya Williams",
+    "email": "priya.williams12@example.com",
+    "country": "GB",
+    "updated_at": "2026-10-03T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0013",
+    "name": "Olivia Patel",
+    "email": "olivia.patel13@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-03T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0014",
+    "name": "Carlos Garcia",
+    "email": "carlos.garcia14@example.com",
+    "country": "DE",
+    "updated_at": "2026-10-03T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0015",
+    "name": "Priya Muller",
+    "email": "priya.muller15@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-03T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0016",
+    "name": "Aditi Patel",
+    "email": "aditi.patel16@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-04T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0017",
+    "name": "Elena Zhang",
+    "email": "elena.zhang17@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-04T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0018",
+    "name": "Maya Kim",
+    "email": "maya.kim18@example.com",
+    "country": "US",
+    "updated_at": "2026-10-04T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0019",
+    "name": "Olivia Rossi",
+    "email": "olivia.rossi19@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-04T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0020",
+    "name": "Aditi Patel",
+    "email": "aditi.patel20@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-04T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0021",
+    "name": "Liam Kim",
+    "email": "liam.kim21@example.com",
+    "country": "SG",
+    "updated_at": "2026-10-04T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0022",
+    "name": "Yuki Zhang",
+    "email": "yuki.zhang22@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-05T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0023",
+    "name": "Maya Ivanov",
+    "email": "maya.ivanov23@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-05T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0024",
+    "name": "Aarav Tanaka",
+    "email": "aarav.tanaka24@example.com",
+    "country": "DE",
+    "updated_at": "2026-10-05T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0025",
+    "name": "Priya Kim",
+    "email": "priya.kim25@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-05T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0026",
+    "name": "Sofia Ivanov",
+    "email": "sofia.ivanov26@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-05T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0027",
+    "name": "Fatima Kim",
+    "email": "fatima.kim27@example.com",
+    "country": "AU",
+    "updated_at": "2026-10-05T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0028",
+    "name": "Noah Zhang",
+    "email": "noah.zhang28@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-06T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0029",
+    "name": "Alex Muller",
+    "email": "alex.muller29@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-06T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0030",
+    "name": "Amara Tanaka",
+    "email": "amara.tanaka30@example.com",
+    "country": "FR",
+    "updated_at": "2026-10-06T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0031",
+    "name": "Olivia Tanaka",
+    "email": "olivia.tanaka31@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-06T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0032",
+    "name": "Maya Tanaka",
+    "email": "maya.tanaka32@example.com",
+    "country": "GB",
+    "updated_at": "2026-10-06T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0033",
+    "name": "Liam Wang",
+    "email": "liam.wang33@example.com",
+    "country": "DE",
+    "updated_at": "2026-10-06T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0034",
+    "name": "Alex Rossi",
+    "email": "alex.rossi34@example.com",
+    "country": "JP",
+    "updated_at": "2026-10-07T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0035",
+    "name": "Carlos Tanaka",
+    "email": "carlos.tanaka35@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-07T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0036",
+    "name": "Amara Tanaka",
+    "email": "amara.tanaka36@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-07T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0037",
+    "name": "Sofia Williams",
+    "email": "sofia.williams37@example.com",
+    "country": "US",
+    "updated_at": "2026-10-07T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0038",
+    "name": "Amara Zhang",
+    "email": "amara.zhang38@example.com",
+    "country": "US",
+    "updated_at": "2026-10-07T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0039",
+    "name": "Priya Muller",
+    "email": "priya.muller39@example.com",
+    "country": "JP",
+    "updated_at": "2026-10-07T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0040",
+    "name": "Carlos Devi",
+    "email": "carlos.devi40@example.com",
+    "country": "DE",
+    "updated_at": "2026-10-08T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0041",
+    "name": "Yuki Smith",
+    "email": "yuki.smith41@example.com",
+    "country": "IN",
+    "updated_at": "2026-10-08T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0042",
+    "name": "Amara Tanaka",
+    "email": "amara.tanaka42@example.com",
+    "country": "AU",
+    "updated_at": "2026-10-08T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0043",
+    "name": "Fatima Tanaka",
+    "email": "fatima.tanaka43@example.com",
+    "country": "AU",
+    "updated_at": "2026-10-08T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0044",
+    "name": "Alex Kim",
+    "email": "alex.kim44@example.com",
+    "country": "GB",
+    "updated_at": "2026-10-08T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0045",
+    "name": "Amara Wang",
+    "email": "amara.wang45@example.com",
+    "country": "BR",
+    "updated_at": "2026-10-08T22:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0046",
+    "name": "Liam Kim",
+    "email": "liam.kim46@example.com",
+    "country": "SG",
+    "updated_at": "2026-10-09T02:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0047",
+    "name": "Fatima Smith",
+    "email": "fatima.smith47@example.com",
+    "country": "JP",
+    "updated_at": "2026-10-09T06:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0048",
+    "name": "Elena Ivanov",
+    "email": "elena.ivanov48@example.com",
+    "country": "GB",
+    "updated_at": "2026-10-09T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0049",
+    "name": "Liam Rossi",
+    "email": "liam.rossi49@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-09T14:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0050",
+    "name": "Priya Chen",
+    "email": "priya.chen50@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-09T18:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0003",
+    "name": "Amara Garcia Updated",
+    "email": "amara.garcia3@example.com",
+    "country": "CA",
+    "updated_at": "2026-10-21T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-0005",
+    "name": "Stale Old Name",
+    "email": "aditi.smith5@example.com",
+    "country": "JP",
+    "updated_at": "2026-09-26T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-9001",
+    "name": null,
+    "email": "null.name@example.com",
+    "country": "US",
+    "updated_at": "2026-10-02T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-9002",
+    "name": "Missing Email",
+    "email": null,
+    "country": "GB",
+    "updated_at": "2026-10-02T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-9003",
+    "name": "Invalid Email Type",
+    "email": 12345,
+    "country": "DE",
+    "updated_at": "2026-10-02T10:00:00+00:00"
+  },
+  {
+    "customer_id": "CUST-9004",
+    "name": "Invalid Date",
+    "email": "bad.date@example.com",
+    "country": "FR",
+    "updated_at": "not-a-valid-timestamp"
+  }
+]

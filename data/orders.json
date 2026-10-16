@@ -1,0 +1,1026 @@
+[
+  {
+    "order_id": "ORD-00001",
+    "customer_id": "CUST-0010",
+    "amount": 630.54,
+    "status": "refunded",
+    "order_ts": "2026-10-01T12:00:00+00:00",
+    "updated_at": "2026-10-01T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00002",
+    "customer_id": "CUST-0039",
+    "amount": 72.83,
+    "status": "refunded",
+    "order_ts": "2026-10-01T14:00:00+00:00",
+    "updated_at": "2026-10-01T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00003",
+    "customer_id": "CUST-0039",
+    "amount": 995.16,
+    "status": "cancelled",
+    "order_ts": "2026-10-01T16:00:00+00:00",
+    "updated_at": "2026-10-01T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00004",
+    "customer_id": "CUST-0036",
+    "amount": 861.31,
+    "status": "completed",
+    "order_ts": "2026-10-01T18:00:00+00:00",
+    "updated_at": "2026-10-01T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00005",
+    "customer_id": "CUST-0044",
+    "amount": 722.79,
+    "status": "cancelled",
+    "order_ts": "2026-10-01T20:00:00+00:00",
+    "updated_at": "2026-10-01T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00006",
+    "customer_id": "CUST-0050",
+    "amount": 643.91,
+    "status": "completed",
+    "order_ts": "2026-10-01T22:00:00+00:00",
+    "updated_at": "2026-10-01T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00007",
+    "customer_id": "CUST-0019",
+    "amount": 439.98,
+    "status": "refunded",
+    "order_ts": "2026-10-02T00:00:00+00:00",
+    "updated_at": "2026-10-02T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00008",
+    "customer_id": "CUST-0001",
+    "amount": 953.32,
+    "status": "cancelled",
+    "order_ts": "2026-10-02T02:00:00+00:00",
+    "updated_at": "2026-10-02T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00009",
+    "customer_id": "CUST-0033",
+    "amount": 763.58,
+    "status": "completed",
+    "order_ts": "2026-10-02T04:00:00+00:00",
+    "updated_at": "2026-10-02T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00010",
+    "customer_id": "CUST-0041",
+    "amount": 305.16,
+    "status": "pending",
+    "order_ts": "2026-10-02T06:00:00+00:00",
+    "updated_at": "2026-10-02T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00011",
+    "customer_id": "CUST-0010",
+    "amount": 379.8,
+    "status": "pending",
+    "order_ts": "2026-10-02T08:00:00+00:00",
+    "updated_at": "2026-10-02T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00012",
+    "customer_id": "CUST-0035",
+    "amount": 953.01,
+    "status": "completed",
+    "order_ts": "2026-10-02T10:00:00+00:00",
+    "updated_at": "2026-10-02T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00013",
+    "customer_id": "CUST-0039",
+    "amount": 330.59,
+    "status": "completed",
+    "order_ts": "2026-10-02T12:00:00+00:00",
+    "updated_at": "2026-10-02T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00014",
+    "customer_id": "CUST-0008",
+    "amount": 928.88,
+    "status": "cancelled",
+    "order_ts": "2026-10-02T14:00:00+00:00",
+    "updated_at": "2026-10-02T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00015",
+    "customer_id": "CUST-0016",
+    "amount": 67.29,
+    "status": "completed",
+    "order_ts": "2026-10-02T16:00:00+00:00",
+    "updated_at": "2026-10-02T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00016",
+    "customer_id": "CUST-0006",
+    "amount": 733.86,
+    "status": "completed",
+    "order_ts": "2026-10-02T18:00:00+00:00",
+    "updated_at": "2026-10-02T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00017",
+    "customer_id": "CUST-0049",
+    "amount": 536.85,
+    "status": "pending",
+    "order_ts": "2026-10-02T20:00:00+00:00",
+    "updated_at": "2026-10-02T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00018",
+    "customer_id": "CUST-0009",
+    "amount": 662.49,
+    "status": "pending",
+    "order_ts": "2026-10-02T22:00:00+00:00",
+    "updated_at": "2026-10-02T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00019",
+    "customer_id": "CUST-0017",
+    "amount": 531.87,
+    "status": "refunded",
+    "order_ts": "2026-10-03T00:00:00+00:00",
+    "updated_at": "2026-10-03T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00020",
+    "customer_id": "CUST-0014",
+    "amount": 928.7,
+    "status": "pending",
+    "order_ts": "2026-10-03T02:00:00+00:00",
+    "updated_at": "2026-10-03T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00021",
+    "customer_id": "CUST-0046",
+    "amount": 318.29,
+    "status": "cancelled",
+    "order_ts": "2026-10-03T04:00:00+00:00",
+    "updated_at": "2026-10-03T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00022",
+    "customer_id": "CUST-0029",
+    "amount": 899.72,
+    "status": "refunded",
+    "order_ts": "2026-10-03T06:00:00+00:00",
+    "updated_at": "2026-10-03T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00023",
+    "customer_id": "CUST-0008",
+    "amount": 255.18,
+    "status": "completed",
+    "order_ts": "2026-10-03T08:00:00+00:00",
+    "updated_at": "2026-10-03T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00024",
+    "customer_id": "CUST-0022",
+    "amount": 30.8,
+    "status": "pending",
+    "order_ts": "2026-10-03T10:00:00+00:00",
+    "updated_at": "2026-10-03T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00025",
+    "customer_id": "CUST-0038",
+    "amount": 227.79,
+    "status": "completed",
+    "order_ts": "2026-10-03T12:00:00+00:00",
+    "updated_at": "2026-10-03T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00026",
+    "customer_id": "CUST-0046",
+    "amount": 634.16,
+    "status": "pending",
+    "order_ts": "2026-10-03T14:00:00+00:00",
+    "updated_at": "2026-10-03T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00027",
+    "customer_id": "CUST-0005",
+    "amount": 905.46,
+    "status": "cancelled",
+    "order_ts": "2026-10-03T16:00:00+00:00",
+    "updated_at": "2026-10-03T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00028",
+    "customer_id": "CUST-0005",
+    "amount": 518.5,
+    "status": "cancelled",
+    "order_ts": "2026-10-03T18:00:00+00:00",
+    "updated_at": "2026-10-03T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00029",
+    "customer_id": "CUST-0043",
+    "amount": 490.07,
+    "status": "pending",
+    "order_ts": "2026-10-03T20:00:00+00:00",
+    "updated_at": "2026-10-03T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00030",
+    "customer_id": "CUST-0047",
+    "amount": 935.22,
+    "status": "refunded",
+    "order_ts": "2026-10-03T22:00:00+00:00",
+    "updated_at": "2026-10-03T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00031",
+    "customer_id": "CUST-0016",
+    "amount": 785.99,
+    "status": "refunded",
+    "order_ts": "2026-10-04T00:00:00+00:00",
+    "updated_at": "2026-10-04T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00032",
+    "customer_id": "CUST-0013",
+    "amount": 103.29,
+    "status": "refunded",
+    "order_ts": "2026-10-04T02:00:00+00:00",
+    "updated_at": "2026-10-04T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00033",
+    "customer_id": "CUST-0023",
+    "amount": 428.92,
+    "status": "refunded",
+    "order_ts": "2026-10-04T04:00:00+00:00",
+    "updated_at": "2026-10-04T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00034",
+    "customer_id": "CUST-0047",
+    "amount": 63.58,
+    "status": "completed",
+    "order_ts": "2026-10-04T06:00:00+00:00",
+    "updated_at": "2026-10-04T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00035",
+    "customer_id": "CUST-0004",
+    "amount": 408.19,
+    "status": "cancelled",
+    "order_ts": "2026-10-04T08:00:00+00:00",
+    "updated_at": "2026-10-04T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00036",
+    "customer_id": "CUST-0007",
+    "amount": 255.92,
+    "status": "pending",
+    "order_ts": "2026-10-04T10:00:00+00:00",
+    "updated_at": "2026-10-04T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00037",
+    "customer_id": "CUST-0035",
+    "amount": 453.68,
+    "status": "refunded",
+    "order_ts": "2026-10-04T12:00:00+00:00",
+    "updated_at": "2026-10-04T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00038",
+    "customer_id": "CUST-0012",
+    "amount": 285.48,
+    "status": "pending",
+    "order_ts": "2026-10-04T14:00:00+00:00",
+    "updated_at": "2026-10-04T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00039",
+    "customer_id": "CUST-0005",
+    "amount": 448.26,
+    "status": "completed",
+    "order_ts": "2026-10-04T16:00:00+00:00",
+    "updated_at": "2026-10-04T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00040",
+    "customer_id": "CUST-0004",
+    "amount": 654.97,
+    "status": "completed",
+    "order_ts": "2026-10-04T18:00:00+00:00",
+    "updated_at": "2026-10-04T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00041",
+    "customer_id": "CUST-0006",
+    "amount": 926.18,
+    "status": "pending",
+    "order_ts": "2026-10-04T20:00:00+00:00",
+    "updated_at": "2026-10-04T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00042",
+    "customer_id": "CUST-0011",
+    "amount": 411.94,
+    "status": "refunded",
+    "order_ts": "2026-10-04T22:00:00+00:00",
+    "updated_at": "2026-10-04T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00043",
+    "customer_id": "CUST-0014",
+    "amount": 865.14,
+    "status": "completed",
+    "order_ts": "2026-10-05T00:00:00+00:00",
+    "updated_at": "2026-10-05T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00044",
+    "customer_id": "CUST-0011",
+    "amount": 384.8,
+    "status": "refunded",
+    "order_ts": "2026-10-05T02:00:00+00:00",
+    "updated_at": "2026-10-05T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00045",
+    "customer_id": "CUST-0017",
+    "amount": 926.33,
+    "status": "refunded",
+    "order_ts": "2026-10-05T04:00:00+00:00",
+    "updated_at": "2026-10-05T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00046",
+    "customer_id": "CUST-0019",
+    "amount": 428.35,
+    "status": "refunded",
+    "order_ts": "2026-10-05T06:00:00+00:00",
+    "updated_at": "2026-10-05T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00047",
+    "customer_id": "CUST-0010",
+    "amount": 197.81,
+    "status": "pending",
+    "order_ts": "2026-10-05T08:00:00+00:00",
+    "updated_at": "2026-10-05T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00048",
+    "customer_id": "CUST-0004",
+    "amount": 582.81,
+    "status": "completed",
+    "order_ts": "2026-10-05T10:00:00+00:00",
+    "updated_at": "2026-10-05T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00049",
+    "customer_id": "CUST-0048",
+    "amount": 320.16,
+    "status": "completed",
+    "order_ts": "2026-10-05T12:00:00+00:00",
+    "updated_at": "2026-10-05T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00050",
+    "customer_id": "CUST-0038",
+    "amount": 481.54,
+    "status": "pending",
+    "order_ts": "2026-10-05T14:00:00+00:00",
+    "updated_at": "2026-10-05T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00051",
+    "customer_id": "CUST-0004",
+    "amount": 960.21,
+    "status": "completed",
+    "order_ts": "2026-10-05T16:00:00+00:00",
+    "updated_at": "2026-10-05T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00052",
+    "customer_id": "CUST-0012",
+    "amount": 77.77,
+    "status": "completed",
+    "order_ts": "2026-10-05T18:00:00+00:00",
+    "updated_at": "2026-10-05T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00053",
+    "customer_id": "CUST-0044",
+    "amount": 862.34,
+    "status": "refunded",
+    "order_ts": "2026-10-05T20:00:00+00:00",
+    "updated_at": "2026-10-05T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00054",
+    "customer_id": "CUST-0008",
+    "amount": 941.24,
+    "status": "pending",
+    "order_ts": "2026-10-05T22:00:00+00:00",
+    "updated_at": "2026-10-05T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00055",
+    "customer_id": "CUST-0038",
+    "amount": 597.98,
+    "status": "completed",
+    "order_ts": "2026-10-06T00:00:00+00:00",
+    "updated_at": "2026-10-06T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00056",
+    "customer_id": "CUST-0027",
+    "amount": 660.14,
+    "status": "cancelled",
+    "order_ts": "2026-10-06T02:00:00+00:00",
+    "updated_at": "2026-10-06T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00057",
+    "customer_id": "CUST-0017",
+    "amount": 212.01,
+    "status": "cancelled",
+    "order_ts": "2026-10-06T04:00:00+00:00",
+    "updated_at": "2026-10-06T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00058",
+    "customer_id": "CUST-0016",
+    "amount": 272.69,
+    "status": "pending",
+    "order_ts": "2026-10-06T06:00:00+00:00",
+    "updated_at": "2026-10-06T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00059",
+    "customer_id": "CUST-0043",
+    "amount": 648.4,
+    "status": "refunded",
+    "order_ts": "2026-10-06T08:00:00+00:00",
+    "updated_at": "2026-10-06T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00060",
+    "customer_id": "CUST-0021",
+    "amount": 928.8,
+    "status": "completed",
+    "order_ts": "2026-10-06T10:00:00+00:00",
+    "updated_at": "2026-10-06T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00061",
+    "customer_id": "CUST-0001",
+    "amount": 463.24,
+    "status": "completed",
+    "order_ts": "2026-10-06T12:00:00+00:00",
+    "updated_at": "2026-10-06T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00062",
+    "customer_id": "CUST-0005",
+    "amount": 541.72,
+    "status": "cancelled",
+    "order_ts": "2026-10-06T14:00:00+00:00",
+    "updated_at": "2026-10-06T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00063",
+    "customer_id": "CUST-0009",
+    "amount": 932.99,
+    "status": "completed",
+    "order_ts": "2026-10-06T16:00:00+00:00",
+    "updated_at": "2026-10-06T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00064",
+    "customer_id": "CUST-0016",
+    "amount": 375.46,
+    "status": "pending",
+    "order_ts": "2026-10-06T18:00:00+00:00",
+    "updated_at": "2026-10-06T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00065",
+    "customer_id": "CUST-0029",
+    "amount": 834.57,
+    "status": "cancelled",
+    "order_ts": "2026-10-06T20:00:00+00:00",
+    "updated_at": "2026-10-06T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00066",
+    "customer_id": "CUST-0040",
+    "amount": 983.03,
+    "status": "completed",
+    "order_ts": "2026-10-06T22:00:00+00:00",
+    "updated_at": "2026-10-06T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00067",
+    "customer_id": "CUST-0043",
+    "amount": 818.12,
+    "status": "cancelled",
+    "order_ts": "2026-10-07T00:00:00+00:00",
+    "updated_at": "2026-10-07T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00068",
+    "customer_id": "CUST-0043",
+    "amount": 112.45,
+    "status": "pending",
+    "order_ts": "2026-10-07T02:00:00+00:00",
+    "updated_at": "2026-10-07T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00069",
+    "customer_id": "CUST-0017",
+    "amount": 124.16,
+    "status": "completed",
+    "order_ts": "2026-10-07T04:00:00+00:00",
+    "updated_at": "2026-10-07T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00070",
+    "customer_id": "CUST-0048",
+    "amount": 557.14,
+    "status": "cancelled",
+    "order_ts": "2026-10-07T06:00:00+00:00",
+    "updated_at": "2026-10-07T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00071",
+    "customer_id": "CUST-0019",
+    "amount": 608.18,
+    "status": "cancelled",
+    "order_ts": "2026-10-07T08:00:00+00:00",
+    "updated_at": "2026-10-07T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00072",
+    "customer_id": "CUST-0014",
+    "amount": 689.93,
+    "status": "cancelled",
+    "order_ts": "2026-10-07T10:00:00+00:00",
+    "updated_at": "2026-10-07T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00073",
+    "customer_id": "CUST-0033",
+    "amount": 493.16,
+    "status": "completed",
+    "order_ts": "2026-10-07T12:00:00+00:00",
+    "updated_at": "2026-10-07T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00074",
+    "customer_id": "CUST-0006",
+    "amount": 637.31,
+    "status": "cancelled",
+    "order_ts": "2026-10-07T14:00:00+00:00",
+    "updated_at": "2026-10-07T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00075",
+    "customer_id": "CUST-0003",
+    "amount": 13.51,
+    "status": "pending",
+    "order_ts": "2026-10-07T16:00:00+00:00",
+    "updated_at": "2026-10-07T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00076",
+    "customer_id": "CUST-0041",
+    "amount": 979.02,
+    "status": "pending",
+    "order_ts": "2026-10-07T18:00:00+00:00",
+    "updated_at": "2026-10-07T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00077",
+    "customer_id": "CUST-0048",
+    "amount": 446.98,
+    "status": "refunded",
+    "order_ts": "2026-10-07T20:00:00+00:00",
+    "updated_at": "2026-10-07T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00078",
+    "customer_id": "CUST-0036",
+    "amount": 19.56,
+    "status": "completed",
+    "order_ts": "2026-10-07T22:00:00+00:00",
+    "updated_at": "2026-10-07T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00079",
+    "customer_id": "CUST-0045",
+    "amount": 903.99,
+    "status": "completed",
+    "order_ts": "2026-10-08T00:00:00+00:00",
+    "updated_at": "2026-10-08T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00080",
+    "customer_id": "CUST-0024",
+    "amount": 586.1,
+    "status": "pending",
+    "order_ts": "2026-10-08T02:00:00+00:00",
+    "updated_at": "2026-10-08T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00081",
+    "customer_id": "CUST-0028",
+    "amount": 136.04,
+    "status": "cancelled",
+    "order_ts": "2026-10-08T04:00:00+00:00",
+    "updated_at": "2026-10-08T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00082",
+    "customer_id": "CUST-0024",
+    "amount": 899.09,
+    "status": "completed",
+    "order_ts": "2026-10-08T06:00:00+00:00",
+    "updated_at": "2026-10-08T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00083",
+    "customer_id": "CUST-0023",
+    "amount": 217.77,
+    "status": "pending",
+    "order_ts": "2026-10-08T08:00:00+00:00",
+    "updated_at": "2026-10-08T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00084",
+    "customer_id": "CUST-0043",
+    "amount": 111.66,
+    "status": "refunded",
+    "order_ts": "2026-10-08T10:00:00+00:00",
+    "updated_at": "2026-10-08T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00085",
+    "customer_id": "CUST-0040",
+    "amount": 751.23,
+    "status": "pending",
+    "order_ts": "2026-10-08T12:00:00+00:00",
+    "updated_at": "2026-10-08T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00086",
+    "customer_id": "CUST-0011",
+    "amount": 975.47,
+    "status": "pending",
+    "order_ts": "2026-10-08T14:00:00+00:00",
+    "updated_at": "2026-10-08T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00087",
+    "customer_id": "CUST-0027",
+    "amount": 34.51,
+    "status": "cancelled",
+    "order_ts": "2026-10-08T16:00:00+00:00",
+    "updated_at": "2026-10-08T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00088",
+    "customer_id": "CUST-0027",
+    "amount": 803.41,
+    "status": "pending",
+    "order_ts": "2026-10-08T18:00:00+00:00",
+    "updated_at": "2026-10-08T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00089",
+    "customer_id": "CUST-0018",
+    "amount": 167.45,
+    "status": "completed",
+    "order_ts": "2026-10-08T20:00:00+00:00",
+    "updated_at": "2026-10-08T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00090",
+    "customer_id": "CUST-0025",
+    "amount": 872.57,
+    "status": "refunded",
+    "order_ts": "2026-10-08T22:00:00+00:00",
+    "updated_at": "2026-10-08T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00091",
+    "customer_id": "CUST-0015",
+    "amount": 207.38,
+    "status": "refunded",
+    "order_ts": "2026-10-09T00:00:00+00:00",
+    "updated_at": "2026-10-09T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00092",
+    "customer_id": "CUST-0023",
+    "amount": 311.83,
+    "status": "pending",
+    "order_ts": "2026-10-09T02:00:00+00:00",
+    "updated_at": "2026-10-09T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00093",
+    "customer_id": "CUST-0015",
+    "amount": 33.4,
+    "status": "pending",
+    "order_ts": "2026-10-09T04:00:00+00:00",
+    "updated_at": "2026-10-09T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00094",
+    "customer_id": "CUST-0026",
+    "amount": 334.65,
+    "status": "completed",
+    "order_ts": "2026-10-09T06:00:00+00:00",
+    "updated_at": "2026-10-09T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00095",
+    "customer_id": "CUST-0050",
+    "amount": 286.05,
+    "status": "refunded",
+    "order_ts": "2026-10-09T08:00:00+00:00",
+    "updated_at": "2026-10-09T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00096",
+    "customer_id": "CUST-0044",
+    "amount": 980.36,
+    "status": "cancelled",
+    "order_ts": "2026-10-09T10:00:00+00:00",
+    "updated_at": "2026-10-09T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00097",
+    "customer_id": "CUST-0002",
+    "amount": 124.07,
+    "status": "cancelled",
+    "order_ts": "2026-10-09T12:00:00+00:00",
+    "updated_at": "2026-10-09T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00098",
+    "customer_id": "CUST-0012",
+    "amount": 584.2,
+    "status": "cancelled",
+    "order_ts": "2026-10-09T14:00:00+00:00",
+    "updated_at": "2026-10-09T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00099",
+    "customer_id": "CUST-0003",
+    "amount": 117.21,
+    "status": "refunded",
+    "order_ts": "2026-10-09T16:00:00+00:00",
+    "updated_at": "2026-10-09T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00100",
+    "customer_id": "CUST-0023",
+    "amount": 730.53,
+    "status": "cancelled",
+    "order_ts": "2026-10-09T18:00:00+00:00",
+    "updated_at": "2026-10-09T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00101",
+    "customer_id": "CUST-0028",
+    "amount": 609.54,
+    "status": "completed",
+    "order_ts": "2026-10-09T20:00:00+00:00",
+    "updated_at": "2026-10-09T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00102",
+    "customer_id": "CUST-0025",
+    "amount": 899.61,
+    "status": "pending",
+    "order_ts": "2026-10-09T22:00:00+00:00",
+    "updated_at": "2026-10-09T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00103",
+    "customer_id": "CUST-0017",
+    "amount": 53.9,
+    "status": "refunded",
+    "order_ts": "2026-10-10T00:00:00+00:00",
+    "updated_at": "2026-10-10T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00104",
+    "customer_id": "CUST-0001",
+    "amount": 524.2,
+    "status": "pending",
+    "order_ts": "2026-10-10T02:00:00+00:00",
+    "updated_at": "2026-10-10T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00105",
+    "customer_id": "CUST-0024",
+    "amount": 436.55,
+    "status": "cancelled",
+    "order_ts": "2026-10-10T04:00:00+00:00",
+    "updated_at": "2026-10-10T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00106",
+    "customer_id": "CUST-0040",
+    "amount": 320.46,
+    "status": "completed",
+    "order_ts": "2026-10-10T06:00:00+00:00",
+    "updated_at": "2026-10-10T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00107",
+    "customer_id": "CUST-0047",
+    "amount": 900.15,
+    "status": "cancelled",
+    "order_ts": "2026-10-10T08:00:00+00:00",
+    "updated_at": "2026-10-10T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00108",
+    "customer_id": "CUST-0043",
+    "amount": 413.9,
+    "status": "refunded",
+    "order_ts": "2026-10-10T10:00:00+00:00",
+    "updated_at": "2026-10-10T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00109",
+    "customer_id": "CUST-0045",
+    "amount": 302.4,
+    "status": "pending",
+    "order_ts": "2026-10-10T12:00:00+00:00",
+    "updated_at": "2026-10-10T13:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00110",
+    "customer_id": "CUST-0013",
+    "amount": 425.82,
+    "status": "refunded",
+    "order_ts": "2026-10-10T14:00:00+00:00",
+    "updated_at": "2026-10-10T15:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00111",
+    "customer_id": "CUST-0044",
+    "amount": 749.91,
+    "status": "pending",
+    "order_ts": "2026-10-10T16:00:00+00:00",
+    "updated_at": "2026-10-10T17:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00112",
+    "customer_id": "CUST-0040",
+    "amount": 572.85,
+    "status": "refunded",
+    "order_ts": "2026-10-10T18:00:00+00:00",
+    "updated_at": "2026-10-10T19:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00113",
+    "customer_id": "CUST-0036",
+    "amount": 834.55,
+    "status": "cancelled",
+    "order_ts": "2026-10-10T20:00:00+00:00",
+    "updated_at": "2026-10-10T21:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00114",
+    "customer_id": "CUST-0019",
+    "amount": 217.87,
+    "status": "cancelled",
+    "order_ts": "2026-10-10T22:00:00+00:00",
+    "updated_at": "2026-10-10T23:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00115",
+    "customer_id": "CUST-0030",
+    "amount": 446.93,
+    "status": "pending",
+    "order_ts": "2026-10-11T00:00:00+00:00",
+    "updated_at": "2026-10-11T01:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00116",
+    "customer_id": "CUST-0033",
+    "amount": 477.98,
+    "status": "pending",
+    "order_ts": "2026-10-11T02:00:00+00:00",
+    "updated_at": "2026-10-11T03:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00117",
+    "customer_id": "CUST-0043",
+    "amount": 93.86,
+    "status": "cancelled",
+    "order_ts": "2026-10-11T04:00:00+00:00",
+    "updated_at": "2026-10-11T05:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00118",
+    "customer_id": "CUST-0006",
+    "amount": 819.42,
+    "status": "pending",
+    "order_ts": "2026-10-11T06:00:00+00:00",
+    "updated_at": "2026-10-11T07:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00119",
+    "customer_id": "CUST-0044",
+    "amount": 317.0,
+    "status": "pending",
+    "order_ts": "2026-10-11T08:00:00+00:00",
+    "updated_at": "2026-10-11T09:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00120",
+    "customer_id": "CUST-0010",
+    "amount": 34.16,
+    "status": "pending",
+    "order_ts": "2026-10-11T10:00:00+00:00",
+    "updated_at": "2026-10-11T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00006",
+    "customer_id": "CUST-0050",
+    "amount": 643.91,
+    "status": "completed",
+    "order_ts": "2026-10-01T22:00:00+00:00",
+    "updated_at": "2026-10-26T10:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-00010",
+    "customer_id": "CUST-0041",
+    "amount": 305.16,
+    "status": "pending",
+    "order_ts": "2026-10-02T06:00:00+00:00",
+    "updated_at": "2026-09-29T10:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-99001",
+    "customer_id": "CUST-NONEXISTENT-999",
+    "amount": 149.99,
+    "status": "completed",
+    "order_ts": "2026-10-04T10:00:00+00:00",
+    "updated_at": "2026-10-04T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-99002",
+    "customer_id": "CUST-UNKNOWN-888",
+    "amount": 49.5,
+    "status": "pending",
+    "order_ts": "2026-10-04T10:00:00+00:00",
+    "updated_at": "2026-10-04T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-99003",
+    "customer_id": "CUST-0001",
+    "amount": null,
+    "status": "completed",
+    "order_ts": "2026-10-05T10:00:00+00:00",
+    "updated_at": "2026-10-05T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-99004",
+    "customer_id": null,
+    "amount": 75.0,
+    "status": "pending",
+    "order_ts": "2026-10-05T10:00:00+00:00",
+    "updated_at": "2026-10-05T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-99005",
+    "customer_id": "CUST-0002",
+    "amount": "NOT_A_DECIMAL",
+    "status": "completed",
+    "order_ts": "2026-10-06T10:00:00+00:00",
+    "updated_at": "2026-10-06T11:00:00+00:00"
+  },
+  {
+    "order_id": "ORD-99006",
+    "customer_id": "CUST-0003",
+    "amount": 120.0,
+    "status": 12345,
+    "order_ts": "2026-10-06T10:00:00+00:00",
+    "updated_at": "2026-10-06T11:00:00+00:00"
+  }
+]
