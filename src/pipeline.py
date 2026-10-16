@@ -4,6 +4,7 @@ import json
 from typing import Any, Dict, Optional
 import uuid
 
+from src.ai.summarizer import Summarizer
 from src.config import settings
 from src.extract import Extractor, RetryExhaustedError
 from src.load import (
@@ -30,6 +31,7 @@ def run_pipeline(
     run_id: Optional[str] = None,
     full_refresh: bool = False,
     fail_rate: Optional[float] = None,
+    summary_provider: Optional[str] = None,
 ) -> Dict[str, Any]:
     active_run_id = run_id or f"run_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex[:6]}"
     logger = setup_logging(run_id=active_run_id)
@@ -134,11 +136,20 @@ def run_pipeline(
     duration = (end_time - start_time).total_seconds()
     metrics["duration_seconds"] = round(duration, 2)
 
+    summarizer = Summarizer(provider_type=summary_provider, run_id=active_run_id)
+    summary_result = summarizer.generate_summary(metrics)
+    summarizer.save_summary(conn, summary_result)
+
+    metrics["summary"] = summary_result.summary
+    metrics["summary_provider"] = summary_result.provider
+    metrics["summary_validated"] = summary_result.validated
+
     logger.info(
         f"Pipeline run finished: status={final_status} fetched={rows_fetched} "
         f"loaded={total_loaded} rejected={total_rejected} dupes_removed={total_dupes} "
         f"retries={extractor.total_retries} duration={metrics['duration_seconds']}s"
     )
+    logger.info(f"Run Summary [{summary_result.provider}]: {summary_result.summary}")
 
     return metrics
 
@@ -150,6 +161,7 @@ if __name__ == "__main__":
     parser.add_argument("--run-id", type=str, default=None, help="Custom identifier for run")
     parser.add_argument("--full-refresh", action="store_true", help="Ignore watermarks and do full fetch")
     parser.add_argument("--fail-rate", type=float, default=None, help="Injected failure rate (0.0 to 1.0)")
+    parser.add_argument("--summary-provider", type=str, default=None, choices=["rule_based", "ollama"], help="AI summary provider")
     args = parser.parse_args()
 
     metrics = run_pipeline(
@@ -158,5 +170,7 @@ if __name__ == "__main__":
         run_id=args.run_id,
         full_refresh=args.full_refresh,
         fail_rate=args.fail_rate,
+        summary_provider=args.summary_provider,
     )
     print(json.dumps(metrics, indent=2))
+
