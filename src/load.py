@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 import hashlib
 import json
 from pathlib import Path
@@ -9,6 +10,18 @@ from src.extract import ExtractedPage
 from src.logging_setup import get_logger
 
 SQL_DIR = Path(__file__).resolve().parent.parent / "sql"
+
+
+@dataclass
+class TransformResult:
+    customers_staged: int = 0
+    customers_deduped: int = 0
+    customer_duplicates_removed: int = 0
+    orders_staged: int = 0
+    orders_deduped: int = 0
+    order_duplicates_removed: int = 0
+    orphan_orders_rejected: int = 0
+    orders_loaded: int = 0
 
 
 def get_connection(db_path: Optional[str] = None) -> duckdb.DuckDBPyConnection:
@@ -146,4 +159,145 @@ def save_rejected_records(
             [rec.run_id, rec.entity, rec.reason, payload_json],
         )
     return len(records)
+
+
+def init_curated_schema(conn: duckdb.DuckDBPyConnection) -> None:
+    curated_sql_path = SQL_DIR / "02_curated.sql"
+    if curated_sql_path.exists():
+        with open(curated_sql_path, "r", encoding="utf-8") as f:
+            conn.execute(f.read())
+
+
+def init_all_schemas(conn: duckdb.DuckDBPyConnection) -> None:
+    init_raw_schema(conn)
+    init_control_schema(conn)
+    init_curated_schema(conn)
+
+
+def transform_and_load_curated(
+    conn: duckdb.DuckDBPyConnection,
+    run_id: str,
+    valid_customers: List[Dict[str, Any]],
+    valid_orders: List[Dict[str, Any]],
+) -> TransformResult:
+    logger = get_logger("transformer", run_id=run_id)
+    result = TransformResult()
+
+    conn.execute("""
+        CREATE OR REPLACE TEMP TABLE stg_customers (
+            customer_id VARCHAR,
+            name VARCHAR,
+            email VARCHAR,
+            country VARCHAR,
+            updated_at VARCHAR,
+            loaded_run_id VARCHAR
+        );
+        CREATE OR REPLACE TEMP TABLE stg_orders (
+            order_id VARCHAR,
+            customer_id VARCHAR,
+            amount DECIMAL(12, 2),
+            status VARCHAR,
+            order_ts VARCHAR,
+            updated_at VARCHAR,
+            loaded_run_id VARCHAR
+        );
+    """)
+
+    if valid_customers:
+        cust_tuples = [
+            (c["customer_id"], c["name"], c["email"], c["country"], c["updated_at"], run_id)
+            for c in valid_customers
+        ]
+        conn.executemany("INSERT INTO stg_customers VALUES (?, ?, ?, ?, ?, ?)", cust_tuples)
+    result.customers_staged = len(valid_customers)
+
+    if valid_orders:
+        ord_tuples = [
+            (o["order_id"], o["customer_id"], o["amount"], o["status"], o["order_ts"], o["updated_at"], run_id)
+            for o in valid_orders
+        ]
+        conn.executemany("INSERT INTO stg_orders VALUES (?, ?, ?, ?, ?, ?, ?)", ord_tuples)
+    result.orders_staged = len(valid_orders)
+
+    conn.execute("""
+        CREATE OR REPLACE TEMP VIEW dedup_stg_customers AS
+        SELECT * EXCLUDE rn FROM (
+            SELECT *, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY updated_at DESC) AS rn
+            FROM stg_customers
+        ) WHERE rn = 1;
+
+        CREATE OR REPLACE TEMP VIEW dedup_stg_orders AS
+        SELECT * EXCLUDE rn FROM (
+            SELECT *, ROW_NUMBER() OVER (PARTITION BY order_id ORDER BY updated_at DESC) AS rn
+            FROM stg_orders
+        ) WHERE rn = 1;
+    """)
+
+    result.customers_deduped = conn.execute("SELECT COUNT(*) FROM dedup_stg_customers").fetchone()[0]
+    result.customer_duplicates_removed = result.customers_staged - result.customers_deduped
+
+    result.orders_deduped = conn.execute("SELECT COUNT(*) FROM dedup_stg_orders").fetchone()[0]
+    result.order_duplicates_removed = result.orders_staged - result.orders_deduped
+
+    conn.execute("""
+        INSERT INTO dim_customer (customer_id, name, email, country, updated_at, loaded_run_id)
+        SELECT customer_id, name, email, country, updated_at, loaded_run_id
+        FROM dedup_stg_customers
+        ON CONFLICT (customer_id) DO UPDATE SET
+            name = EXCLUDED.name,
+            email = EXCLUDED.email,
+            country = EXCLUDED.country,
+            updated_at = EXCLUDED.updated_at,
+            loaded_run_id = EXCLUDED.loaded_run_id
+        WHERE EXCLUDED.updated_at >= dim_customer.updated_at;
+    """)
+
+    orphan_count = conn.execute("""
+        SELECT COUNT(*) FROM dedup_stg_orders
+        WHERE customer_id NOT IN (SELECT customer_id FROM dim_customer)
+    """).fetchone()[0]
+    result.orphan_orders_rejected = orphan_count
+
+    if orphan_count > 0:
+        conn.execute("""
+            INSERT INTO rejected_records (run_id, entity, reason, payload)
+            SELECT
+                loaded_run_id AS run_id,
+                'order' AS entity,
+                'Foreign key violation: customer_id ' || customer_id || ' does not exist in dim_customer' AS reason,
+                to_json(struct_pack(
+                    order_id := order_id,
+                    customer_id := customer_id,
+                    amount := amount,
+                    status := status,
+                    order_ts := order_ts,
+                    updated_at := updated_at
+                )) AS payload
+            FROM dedup_stg_orders
+            WHERE customer_id NOT IN (SELECT customer_id FROM dim_customer);
+        """)
+
+    conn.execute("""
+        INSERT INTO fact_orders (order_id, customer_id, amount, status, order_ts, updated_at, loaded_run_id)
+        SELECT order_id, customer_id, amount, status, order_ts, updated_at, loaded_run_id
+        FROM dedup_stg_orders
+        WHERE customer_id IN (SELECT customer_id FROM dim_customer)
+        ON CONFLICT (order_id) DO UPDATE SET
+            customer_id = EXCLUDED.customer_id,
+            amount = EXCLUDED.amount,
+            status = EXCLUDED.status,
+            order_ts = EXCLUDED.order_ts,
+            updated_at = EXCLUDED.updated_at,
+            loaded_run_id = EXCLUDED.loaded_run_id
+        WHERE EXCLUDED.updated_at >= fact_orders.updated_at;
+    """)
+
+    result.orders_loaded = result.orders_deduped - result.orphan_orders_rejected
+
+    logger.info(
+        f"Transform complete: {result.customers_deduped} customers loaded ({result.customer_duplicates_removed} dupes removed), "
+        f"{result.orders_loaded} orders loaded ({result.order_duplicates_removed} dupes removed, {result.orphan_orders_rejected} orphans quarantined)"
+    )
+    return result
+
 
