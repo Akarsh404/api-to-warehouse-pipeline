@@ -120,3 +120,30 @@ def fetch_raw_records(
         if isinstance(records, list):
             all_records.extend(records)
     return all_records
+
+
+def init_control_schema(conn: duckdb.DuckDBPyConnection) -> None:
+    control_sql_path = SQL_DIR / "04_control.sql"
+    if control_sql_path.exists():
+        with open(control_sql_path, "r", encoding="utf-8") as f:
+            conn.execute(f.read())
+
+
+def save_rejected_records(
+    conn: duckdb.DuckDBPyConnection,
+    records: List[Any],
+) -> int:
+    if not records:
+        return 0
+
+    for rec in records:
+        payload_json = json.dumps(rec.payload) if not isinstance(rec.payload, str) else rec.payload
+        conn.execute(
+            """
+            INSERT INTO rejected_records (run_id, entity, reason, payload)
+            VALUES (?, ?, ?, ?)
+            """,
+            [rec.run_id, rec.entity, rec.reason, payload_json],
+        )
+    return len(records)
+
